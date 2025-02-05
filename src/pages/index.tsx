@@ -4,25 +4,30 @@ import { GetServerSideProps } from "next";
 
 // Api
 import { api } from "@/api";
-import { MoviesList } from "@/types";
+// Types
+import { MoviesList, TMovie } from "@/types";
+import Base from "@/views/base";
 
 type Props = {
-  movies: any[];
+  movies: TMovie[];
 };
 
 export const Home: FC<Props> = (movies) => {
   console.log(movies);
-  return <div>Home</div>;
+  return (
+    <>
+      <Base>Home</Base>
+    </>
+  );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const movies = await api.movies.getList(MoviesList.TOP_RATED);
-    console.log(movies);
+    const data = await api.movies.getList(MoviesList.TOP_RATED);
 
     return {
       props: {
-        movies,
+        movies: data,
       },
     };
   } catch (error) {

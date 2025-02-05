@@ -29,5 +29,5 @@
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "cSpell.words": ["Bento"]
+  "cSpell.words": ["Bento", "TMDB"]
 }
