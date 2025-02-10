@@ -1,7 +1,9 @@
 import React from "react";
 
+import Base from "@/views/base";
+
 const TopRated = () => {
-  return <div>TopRated</div>;
+  return <Base>TopRated</Base>;
 };
 
 export default TopRated;

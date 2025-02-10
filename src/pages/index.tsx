@@ -13,7 +13,6 @@ type Props = {
 };
 
 export const Home: FC<Props> = (movies) => {
-  console.log(movies);
   return (
     <>
       <Base>Home</Base>
