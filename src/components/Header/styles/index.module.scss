@@ -1,0 +1,26 @@
+@use "./palette.scss" as *;
+@use "./constants.scss" as *;
+
+.header {
+  height: $header_height;
+  background: $color1;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    height: $header_content_height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+}

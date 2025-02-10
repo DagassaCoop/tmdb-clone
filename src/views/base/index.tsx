@@ -1,11 +1,26 @@
-import Header from "@/components/header/Header";
+// Core
 import { FC, PropsWithChildren } from "react";
+import cx from "classnames";
 
-type Props = {} & PropsWithChildren;
+// Components
+import Header from "@/components/Header/Header";
 
-const Base: FC<Props> = ({ children }) => {
+// Fonts
+import { Source_Code_Pro } from "next/font/google";
+
+const source_code_pro = Source_Code_Pro({
+  subsets: ["latin"],
+  fallback: ["arial"],
+  weight: ["400", "600"],
+});
+
+type Props = {
+  className?: string;
+} & PropsWithChildren;
+
+const Base: FC<Props> = ({ children, className: classes }) => {
   return (
-    <div>
+    <div className={cx([classes, source_code_pro.className])}>
       <Header />
       {children}
     </div>
