@@ -1,4 +1,4 @@
-$bg-color-1: #dee2e6;
+@use "@/styles/abstracts/colors" as *;
 
 .nav-link {
   display: flex;
@@ -16,10 +16,10 @@ $bg-color-1: #dee2e6;
     white-space: nowrap;
     font-weight: 400;
     font-size: 14px;
-    color: #000;
+    color: $text-primary;
   }
 
   &:hover {
-    background-color: $bg-color-1;
+    background-color: $background-hover;
   }
 }

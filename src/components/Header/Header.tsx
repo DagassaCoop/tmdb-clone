@@ -11,7 +11,9 @@ import { navLinks } from "./mock/navLinks";
 import { useJSXLinks } from "./hooks/useJSXLinks";
 // Book
 import { book } from "@/navigation/book";
+// Components
 import AddMovie from "./components/AddMovie/AddMovie";
+import SwitchLanguage from "./components/SwitchLanguage/SwitchLanguage";
 
 const Header = () => {
   return (
@@ -32,6 +34,7 @@ const Header = () => {
         </div>
         <div className={Styles["actions-wrapper"]}>
           <AddMovie />
+          <SwitchLanguage />
         </div>
       </div>
     </header>

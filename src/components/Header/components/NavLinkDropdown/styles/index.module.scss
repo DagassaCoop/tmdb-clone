@@ -1,4 +1,4 @@
-$border-color-1: rgba(33, 37, 41, 0.2);
+@use "@/styles/abstracts/colors" as *;
 
 .nav-link-dropdown {
   display: flex;
@@ -26,7 +26,7 @@ $border-color-1: rgba(33, 37, 41, 0.2);
     flex-direction: column;
 
     background-color: #fff;
-    border: 1px solid $border-color-1;
+    border: 1px solid $border-color;
     border-radius: 8px;
   }
   .open {

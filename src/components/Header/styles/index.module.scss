@@ -1,10 +1,10 @@
-@use "./palette.scss" as *;
-@use "./constants.scss" as *;
+@use "@/styles/abstracts/colors" as *;
+@use "@/styles/abstracts/variables" as *;
 
 .header {
-  height: $header_height;
-  background: $color1;
-  color: #fff;
+  height: $header-height;
+  background: $primary-color;
+  color: $text-light;
   display: flex;
   justify-content: center;
   align-items: center;
