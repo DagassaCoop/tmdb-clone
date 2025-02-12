@@ -1,6 +1,6 @@
-import { TNavMenuLink } from "../types";
+import { TDynamicNavMenuLink } from "../types";
 
-export const navLinks = [
+export const navLinks: TDynamicNavMenuLink[] = [
   {
     title: "Movies",
     key: null,
@@ -21,8 +21,8 @@ export const navLinks = [
         title: "Top Rated",
         key: "movie_top_rated",
       },
-    ] as Array<TNavMenuLink<string>>,
-  } as TNavMenuLink<null>,
+    ],
+  },
   {
     title: "TV Shows",
     key: null,
@@ -43,8 +43,8 @@ export const navLinks = [
         title: "Top Rated",
         key: "tv_top_rated",
       },
-    ] as Array<TNavMenuLink<string>>,
-  } as TNavMenuLink<null>,
+    ],
+  },
   {
     title: "People",
     key: null,
@@ -53,8 +53,8 @@ export const navLinks = [
         title: "Popular Person",
         key: "person",
       },
-    ] as Array<TNavMenuLink<string>>,
-  } as TNavMenuLink<null>,
+    ],
+  },
   {
     title: "More",
     key: null,
@@ -71,6 +71,6 @@ export const navLinks = [
         title: "Support",
         key: "support",
       },
-    ] as Array<TNavMenuLink<string>>,
-  } as TNavMenuLink<null>,
+    ],
+  },
 ];

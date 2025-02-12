@@ -1,5 +1,5 @@
 // Core
-import { FC, useState } from "react";
+import { FC, useState, memo } from "react";
 import cx from "classnames";
 
 // Types
@@ -30,4 +30,4 @@ const NavLinkDropdown: FC<Props> = ({ link }) => {
   );
 };
 
-export default NavLinkDropdown;
+export default memo(NavLinkDropdown);

@@ -1,5 +1,5 @@
 // Core
-import { FC } from "react";
+import { FC, memo } from "react";
 import Link from "next/link";
 
 // Types
@@ -21,4 +21,4 @@ const NavLink: FC<Props> = ({ link }) => {
   );
 };
 
-export default NavLink;
+export default memo(NavLink);

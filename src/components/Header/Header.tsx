@@ -11,6 +11,7 @@ import { navLinks } from "./mock/navLinks";
 import { useJSXLinks } from "./hooks/useJSXLinks";
 // Book
 import { book } from "@/navigation/book";
+import AddMovie from "./components/AddMovie/AddMovie";
 
 const Header = () => {
   return (
@@ -28,6 +29,9 @@ const Header = () => {
             />
           </Link>
           <nav className={Styles.nav}>{useJSXLinks(navLinks)}</nav>
+        </div>
+        <div className={Styles["actions-wrapper"]}>
+          <AddMovie />
         </div>
       </div>
     </header>
