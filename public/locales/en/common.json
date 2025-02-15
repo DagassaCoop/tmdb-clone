@@ -1,0 +1,30 @@
+{
+  "languagePreferences": "Language preferences",
+  "defaultLanguage": "Default language",
+  "navigation": {
+    "movies": "Movies",
+    "tvShows": "TV Shows",
+    "people": "People",
+    "more": "More"
+  },
+  "movies": {
+    "popular": "Popular",
+    "nowPlaying": "Now Playing",
+    "upcoming": "Upcoming",
+    "topRated": "Top Rated"
+  },
+  "tv": {
+    "popular": "Popular",
+    "airingToday": "Airing Today",
+    "onTheAir": "On TV",
+    "topRated": "Top Rated"
+  },
+  "people": {
+    "person": "Popular Person"
+  },
+  "more": {
+    "discussion": "Discussion",
+    "leaderboard": "Leaderboard",
+    "support": "Support"
+  }
+}

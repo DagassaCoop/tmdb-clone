@@ -1,0 +1,30 @@
+{
+  "languagePreferences": "Языковые настройки",
+  "defaultLanguage": "Язык по умолчанию",
+  "navigation": {
+    "movies": "Фильмы",
+    "tvShows": "Сериалы",
+    "people": "Люди",
+    "more": "Ещё"
+  },
+  "movies": {
+    "popular": "Популярные",
+    "nowPlaying": "Сейчас в кино",
+    "upcoming": "Скоро",
+    "topRated": "Лучшие"
+  },
+  "tv": {
+    "popular": "Популярные",
+    "airingToday": "Сегодня в эфире",
+    "onTheAir": "На ТВ",
+    "topRated": "Лучшие"
+  },
+  "people": {
+    "person": "Популярные люди"
+  },
+  "more": {
+    "discussion": "Обсуждения",
+    "leaderboard": "Рейтинг",
+    "support": "Поддержка"
+  }
+}

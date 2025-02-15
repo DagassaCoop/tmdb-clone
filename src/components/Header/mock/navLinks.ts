@@ -2,73 +2,73 @@ import { TDynamicNavMenuLink } from "../types";
 
 export const navLinks: TDynamicNavMenuLink[] = [
   {
-    title: "Movies",
+    title: "navigation.movies",
     key: null,
     children: [
       {
-        title: "Popular",
+        title: "movies.popular",
         key: "movie_popular",
       },
       {
-        title: "Now Playing",
+        title: "movies.nowPlaying",
         key: "movie_now_playing",
       },
       {
-        title: "Upcoming",
+        title: "movies.upcoming",
         key: "movie_upcoming",
       },
       {
-        title: "Top Rated",
+        title: "movies.topRated",
         key: "movie_top_rated",
       },
     ],
   },
   {
-    title: "TV Shows",
+    title: "navigation.tvShows",
     key: null,
     children: [
       {
-        title: "Popular",
+        title: "tv.popular",
         key: "tv_popular",
       },
       {
-        title: "Airing Today",
+        title: "tv.airingToday",
         key: "tv_airing_today",
       },
       {
-        title: "On TV",
+        title: "tv.onTheAir",
         key: "tv_on_tv",
       },
       {
-        title: "Top Rated",
+        title: "tv.topRated",
         key: "tv_top_rated",
       },
     ],
   },
   {
-    title: "People",
+    title: "navigation.people",
     key: null,
     children: [
       {
-        title: "Popular Person",
+        title: "people.person",
         key: "person",
       },
     ],
   },
   {
-    title: "More",
+    title: "navigation.more",
     key: null,
     children: [
       {
-        title: "Discussion",
+        title: "more.discussion",
         key: "discuss",
       },
       {
-        title: "Leaderboard",
+        title: "more.leaderboard",
         key: "leaderboard",
       },
       {
-        title: "Support",
+        title: "more.support",
         key: "support",
       },
     ],

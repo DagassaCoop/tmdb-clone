@@ -1,0 +1,24 @@
+.language-switcher {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  .title-wrapper {
+    padding: 3px 5px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fff;
+      color: $primary-color;
+    }
+
+    .title {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}

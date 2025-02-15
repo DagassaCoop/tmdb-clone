@@ -1,40 +1,18 @@
 // Core
-import { FC } from "react";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-// Api
-import { api } from "@/api";
-// Types
-import { MoviesList, TMovie } from "@/types";
+// Components
 import Base from "@/views/base";
 
-type Props = {
-  movies: TMovie[];
+const Home = () => {
+  return <Base></Base>;
 };
 
-export const Home: FC<Props> = (movies) => {
-  return (
-    <>
-      <Base>Home</Base>
-    </>
-  );
-};
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  try {
-    const data = await api.movies.getList(MoviesList.TOP_RATED);
-
-    return {
-      props: {
-        movies: data,
-      },
-    };
-  } catch (error) {
-    console.log(error);
-    return {
-      notFound: true,
-    };
-  }
-};
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale || "en", ["common"])),
+  },
+});
 
 export default Home;

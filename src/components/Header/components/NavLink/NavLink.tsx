@@ -1,6 +1,8 @@
+"use client";
 // Core
 import { FC, memo } from "react";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 // Types
 import { TNavMenuLink } from "../../types";
@@ -14,9 +16,10 @@ type Props = {
 };
 
 const NavLink: FC<Props> = ({ link }) => {
+  const { t } = useTranslation();
   return (
     <Link href={book[link.key].url} className={Styles["nav-link"]}>
-      <div className={Styles.title}>{link.title}</div>
+      <div className={Styles.title}>{t(link.title)}</div>
     </Link>
   );
 };

@@ -18,11 +18,11 @@ type Props = {
   className?: string;
 } & PropsWithChildren;
 
-const Base: FC<Props> = ({ children, className: classes }) => {
+const Base: FC<Props> = ({ children, className }) => {
   return (
-    <div className={cx([classes, source_code_pro.className])}>
+    <div className={cx(source_code_pro.className, className)}>
       <Header />
-      {children}
+      <main>{children}</main>
     </div>
   );
 };

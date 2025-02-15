@@ -1,0 +1,49 @@
+@use "@/styles/abstracts/colors" as *;
+
+.add-movie {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  .icon {
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: absolute;
+    left: calc(50% - 65px);
+    top: 100%;
+    padding: 4px 0;
+    min-width: 130px;
+
+    display: none;
+    flex-direction: column;
+
+    background-color: #fff;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+
+    .link {
+      width: 100%;
+      padding: 5px 15px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: left;
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 400;
+      color: $text-primary;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $text-light;
+      }
+    }
+  }
+
+  .open {
+    display: flex;
+  }
+}

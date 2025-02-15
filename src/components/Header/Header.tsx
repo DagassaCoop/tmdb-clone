@@ -13,7 +13,7 @@ import { useJSXLinks } from "./hooks/useJSXLinks";
 import { book } from "@/navigation/book";
 // Components
 import AddMovie from "./components/AddMovie/AddMovie";
-import SwitchLanguage from "./components/SwitchLanguage/SwitchLanguage";
+import SwitchLanguage from "./components/LanguageSwitcher/LanguageSwitcher";
 
 const Header = () => {
   return (
