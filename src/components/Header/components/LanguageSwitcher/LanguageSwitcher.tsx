@@ -45,16 +45,16 @@ const LanguageSwitcher = () => {
   return (
     <div className={Styles["language-switcher"]} ref={ref}>
       <div
-        className={Styles["title-wrapper"]}
+        className={Styles["icon-wrapper"]}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className={Styles.title}>
+        <span className={Styles.icon}>
           {currentLanguage?.title.slice(0, 2).toUpperCase()}
         </span>
       </div>
       <div className={cx([Styles.dropdown, isOpen && Styles.open])}>
-        <span>{t("languagePreferences")}</span>
-        <div>
+        <span className={Styles.title}>{t("languagePreferences")}</span>
+        <div className={Styles.option}>
           <label htmlFor="defaultLanguage">{t("defaultLanguage")}</label>
           <select
             name="defaultLanguage"

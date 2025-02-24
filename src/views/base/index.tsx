@@ -11,7 +11,7 @@ import { Source_Code_Pro } from "next/font/google";
 const source_code_pro = Source_Code_Pro({
   subsets: ["latin"],
   fallback: ["arial"],
-  weight: ["400", "600"],
+  weight: ["400", "600", "700"],
 });
 
 type Props = {

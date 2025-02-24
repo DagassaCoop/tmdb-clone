@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
 
-  .title-wrapper {
+  .icon-wrapper {
     padding: 3px 5px;
     border: 1px solid #fff;
     border-radius: 4px;
@@ -16,9 +16,57 @@
       color: $primary-color;
     }
 
-    .title {
+    .icon {
       font-size: 14px;
       font-weight: 400;
     }
+  }
+
+  .dropdown {
+    position: absolute;
+    left: calc(50% - 140px);
+    top: 100%;
+    padding: 16px;
+    min-width: 280px;
+
+    display: none;
+    flex-direction: column;
+
+    background-color: #fff;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+
+    .title {
+      line-height: 1;
+      max-width: none;
+      font-size: 1.2em;
+      margin-bottom: 12px;
+      color: $text-primary;
+      font-weight: 700;
+    }
+
+    .option {
+      label {
+        font-size: 14px;
+        color: $text-primary;
+        font-weight: 400;
+      }
+
+      select {
+        width: 100%;
+        padding: 10px 15px;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: left;
+        margin-top: 5px;
+        background-color: $background-hover;
+        border-radius: 4px;
+        color: $text-secondary;
+      }
+    }
+  }
+
+  .open {
+    display: flex;
   }
 }

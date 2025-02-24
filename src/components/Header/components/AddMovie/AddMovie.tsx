@@ -28,7 +28,7 @@ const AddMovie = () => {
         height={22}
         className={Styles.icon}
         ref={ref}
-        onClick={() => setIsOpen(true)}
+        onClick={() => setIsOpen(!isOpen)}
       />
       <div className={cx([Styles.dropdown, isOpen && Styles.open])}>
         {addMovieLinks.map((link, index) => {
