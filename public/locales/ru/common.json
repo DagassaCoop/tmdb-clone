@@ -1,6 +1,4 @@
 {
-  "languagePreferences": "Языковые настройки",
-  "defaultLanguage": "Язык по умолчанию",
   "navigation": {
     "movies": "Фильмы",
     "tvShows": "Сериалы",
@@ -26,5 +24,19 @@
     "discussion": "Обсуждения",
     "leaderboard": "Рейтинг",
     "support": "Поддержка"
+  },
+  "languageSwitcher": {
+    "languagePreferences": "Языковые настройки",
+    "defaultLanguage": "Язык по умолчанию"
+  },
+  "addNewBtn": {
+    "addMovie": "Добавить новый фильм",
+    "addTvShow": "Добавить новый сериал"
+  },
+  "notifications": {
+    "title": "Непрочитанные уведомления",
+    "noNotifications": "Отличная работа! Похоже, вы уже в курсе всего.",
+    "notificationsExist": "У вас есть непрочитанные уведомления!",
+    "viewAll": "Посмотреть все"
   }
 }

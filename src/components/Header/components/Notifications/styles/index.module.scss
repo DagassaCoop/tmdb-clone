@@ -1,0 +1,59 @@
+@use "@/styles/abstracts/colors" as *;
+
+.notifications {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  .icon {
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: absolute;
+    left: calc(50% - 150px);
+    top: 100%;
+    padding: 16px;
+    min-width: 300px;
+    color: $text-primary;
+
+    display: none;
+    flex-direction: column;
+
+    background-color: #fff;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+
+    .title {
+      line-height: 1;
+      max-width: none;
+      font-size: 1em;
+      margin-bottom: 12px;
+
+      font-weight: 700;
+      white-space: nowrap;
+
+      .value {
+        color: #666;
+      }
+    }
+
+    .description,
+    .link {
+      font-size: 0.8em;
+      color: $text-secondary;
+      font-weight: 400;
+      margin-bottom: 3px;
+    }
+
+    .link {
+      color: #666;
+    }
+  }
+
+  .open {
+    display: flex;
+  }
+}

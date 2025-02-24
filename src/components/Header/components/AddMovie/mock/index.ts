@@ -2,11 +2,11 @@ import { TNavMenuLink } from "@/components/Header/types";
 
 export const addMovieLinks: TNavMenuLink<string>[] = [
   {
-    title: "Add New Movie",
+    title: "addNewBtn.addMovie",
     key: "",
   },
   {
-    title: "Add New TV Show",
+    title: "addNewBtn.addTvShow",
     key: "",
   },
 ];

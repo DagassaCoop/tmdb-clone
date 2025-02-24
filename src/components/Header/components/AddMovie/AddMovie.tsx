@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import cx from "classnames";
+import { useTranslation } from "next-i18next";
 
 // Styles
 import Styles from "./styles/index.module.scss";
@@ -14,6 +15,7 @@ import { book } from "@/navigation/book";
 import { useOutsideClickCallback } from "@/hooks/useOutsideClickCallback";
 
 const AddMovie = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
 
@@ -38,7 +40,7 @@ const AddMovie = () => {
               href={book[link.key]?.url ?? ""}
               className={Styles.link}
             >
-              {link.title}
+              {t(link.title)}
             </Link>
           );
         })}

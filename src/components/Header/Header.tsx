@@ -14,7 +14,7 @@ import { book } from "@/navigation/book";
 // Components
 import AddMovie from "./components/AddMovie/AddMovie";
 import SwitchLanguage from "./components/LanguageSwitcher/LanguageSwitcher";
-
+import Notifications from "./components/Notifications/Notifications";
 const Header = () => {
   return (
     <header className={cx([Styles.header, "container"])}>
@@ -35,6 +35,7 @@ const Header = () => {
         <div className={Styles["actions-wrapper"]}>
           <AddMovie />
           <SwitchLanguage />
+          <Notifications />
         </div>
       </div>
     </header>

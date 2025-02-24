@@ -53,9 +53,13 @@ const LanguageSwitcher = () => {
         </span>
       </div>
       <div className={cx([Styles.dropdown, isOpen && Styles.open])}>
-        <span className={Styles.title}>{t("languagePreferences")}</span>
+        <span className={Styles.title}>
+          {t("languageSwitcher.languagePreferences")}
+        </span>
         <div className={Styles.option}>
-          <label htmlFor="defaultLanguage">{t("defaultLanguage")}</label>
+          <label htmlFor="defaultLanguage">
+            {t("languageSwitcher.defaultLanguage")}
+          </label>
           <select
             name="defaultLanguage"
             id="defaultLanguage"

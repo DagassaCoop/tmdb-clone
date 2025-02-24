@@ -1,6 +1,4 @@
 {
-  "languagePreferences": "Language preferences",
-  "defaultLanguage": "Default language",
   "navigation": {
     "movies": "Movies",
     "tvShows": "TV Shows",
@@ -26,5 +24,19 @@
     "discussion": "Discussion",
     "leaderboard": "Leaderboard",
     "support": "Support"
+  },
+  "languageSwitcher": {
+    "languagePreferences": "Language preferences",
+    "defaultLanguage": "Default language"
+  },
+  "addNewBtn": {
+    "addMovie": "Add New Movie",
+    "addTvShow": "Add New TV Show"
+  },
+  "notifications": {
+    "title": "Unread Notifications",
+    "noNotifications": "Good job! Looks like you&apos;re all caught up.",
+    "notificationsExist": "You have unread notifications!",
+    "viewAll": "View All"
   }
 }
