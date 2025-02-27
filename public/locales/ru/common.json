@@ -38,5 +38,15 @@
     "noNotifications": "Отличная работа! Похоже, вы уже в курсе всего.",
     "notificationsExist": "У вас есть непрочитанные уведомления!",
     "viewAll": "Посмотреть все"
+  },
+  "settings": {
+    "viewProfile": "Просмотр профиля",
+    "discussion": "Обсуждение",
+    "lists": "Списки",
+    "ratings": "Рейтинг",
+    "watchlist": "Желаемое",
+    "editProfile": "Редактирование профиля",
+    "settings": "Настройки",
+    "logout": "Выйти"
   }
 }

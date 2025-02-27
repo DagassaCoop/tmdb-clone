@@ -3,4 +3,5 @@
 @use "./abstracts/colors" as *;
 
 // Base styles
-@use "./base/reset";
+@use "./base/reset" as *;
+@use "./base/global" as *;

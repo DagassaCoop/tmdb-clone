@@ -15,10 +15,12 @@ import { book } from "@/navigation/book";
 import AddMovie from "./components/AddMovie/AddMovie";
 import SwitchLanguage from "./components/LanguageSwitcher/LanguageSwitcher";
 import Notifications from "./components/Notifications/Notifications";
+import Settings from "./components/Settings/Settings";
+
 const Header = () => {
   return (
-    <header className={cx([Styles.header, "container"])}>
-      <div className={Styles.content}>
+    <header className={Styles.header}>
+      <div className={cx([Styles.content, "container"])}>
         <div className={Styles["nav-wrapper"]}>
           <Link href={book.root.url} className={Styles.logo}>
             <Image
@@ -36,6 +38,7 @@ const Header = () => {
           <AddMovie />
           <SwitchLanguage />
           <Notifications />
+          <Settings />
         </div>
       </div>
     </header>

@@ -38,5 +38,15 @@
     "noNotifications": "Good job! Looks like you&apos;re all caught up.",
     "notificationsExist": "You have unread notifications!",
     "viewAll": "View All"
+  },
+  "settings": {
+    "viewProfile": "View Profile",
+    "discussion": "Discussion",
+    "lists": "Lists",
+    "ratings": "Ratings",
+    "watchlist": "Watchlist",
+    "editProfile": "Edit Profile",
+    "settings": "Settings",
+    "logout": "Logout"
   }
 }
