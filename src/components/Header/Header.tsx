@@ -16,6 +16,7 @@ import AddMovie from "./components/AddMovie/AddMovie";
 import SwitchLanguage from "./components/LanguageSwitcher/LanguageSwitcher";
 import Notifications from "./components/Notifications/Notifications";
 import Settings from "./components/Settings/Settings";
+import Search from "./components/Search/Search";
 
 const Header = () => {
   return (
@@ -39,6 +40,7 @@ const Header = () => {
           <SwitchLanguage />
           <Notifications />
           <Settings />
+          <Search />
         </div>
       </div>
     </header>

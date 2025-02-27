@@ -1,0 +1,18 @@
+.search {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
