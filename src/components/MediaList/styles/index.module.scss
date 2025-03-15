@@ -1,0 +1,21 @@
+.media-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    padding: 0 40px;
+
+    .title {
+      margin-right: 20px;
+      width: fit-content;
+
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+}
