@@ -1,4 +1,39 @@
+@use "@/styles/abstracts/colors" as *;
+
+$tabHeight: 28px;
+
 .floating-button {
-  display: flex;
-  gap: 20px;
+  position: relative;
+  background-color: #fff !important;
+  text-transform: none;
+  border: 2px solid $primary-color;
+  border-radius: 30px;
+  width: fit-content;
+  min-height: $tabHeight !important;
+  height: fit-content;
+
+  .tab-root {
+    height: $tabHeight;
+    min-height: $tabHeight !important;
+    text-transform: none;
+    padding: 12.5px 20px;
+    font-weight: 400;
+    color: $text-primary;
+  }
+
+  .selected {
+    position: relative;
+    z-index: 15;
+    background: linear-gradient(to right, #fff 0%, rgba($light-green, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+
+  .tabs-indicator {
+    height: 100%;
+    z-index: 10;
+    border-radius: 30px;
+    background-color: $primary-color;
+  }
 }
