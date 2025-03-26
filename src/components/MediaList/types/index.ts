@@ -1,3 +1,5 @@
+import { TMedia } from "@/types";
+
 export enum MediaListContents {
   TRENDING = "trending",
   POPULAR = "popular",
@@ -14,5 +16,5 @@ export type TMediaListContent = {
 export type TMediaListItem = {
   id: string;
   title: string;
-  query: string;
+  callback?: () => Promise<TMedia[]>;
 };

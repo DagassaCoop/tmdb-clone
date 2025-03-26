@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // Types
-import { MoviesList, TMDBApiRespond, TMovie } from "@/types";
+import { MoviesList, TMDBApiRespond, TMedia, TMovie } from "@/types";
 // Config
 import { root } from "./config";
 
@@ -14,7 +14,22 @@ export const api = Object.freeze({
         {
           headers: {
             accept: "application/json",
-            Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
+          },
+        }
+      );
+
+      return data.results;
+    },
+  },
+  trending: {
+    getList: async (time_window: "day" | "week"): Promise<TMedia[]> => {
+      const { data }: { data: TMDBApiRespond<TMedia> } = await axios.get(
+        `${root}/3/trending/all/${time_window}?language=en-US`,
+        {
+          headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
           },
         }
       );

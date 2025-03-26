@@ -1,6 +1,6 @@
 "use client";
 // Core
-import { FC, useState } from "react";
+import { FC, memo } from "react";
 
 // Styles
 import Styles from "./styles/index.module.scss";
@@ -10,7 +10,9 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
 type Props = {
+  value: number;
   tags: string[];
+  callback?: (index: number) => void;
 };
 
 function a11yProps(index: number) {
@@ -20,12 +22,9 @@ function a11yProps(index: number) {
   };
 }
 
-const FloatingButton: FC<Props> = ({ tags }) => {
-  const [value, setValue] = useState(0);
-
+const FloatingButton: FC<Props> = ({ value, tags, callback }) => {
   const handleChange = (event: unknown, newValue: number) => {
-    setValue(newValue);
-    // callback(data[newValue]);
+    callback?.(newValue);
   };
 
   return (
@@ -49,4 +48,4 @@ const FloatingButton: FC<Props> = ({ tags }) => {
   );
 };
 
-export default FloatingButton;
+export default memo(FloatingButton);
