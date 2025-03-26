@@ -20,4 +20,20 @@
       font-weight: 600;
     }
   }
+
+  .content {
+    width: 100%;
+    overflow: scroll;
+
+    .wrapper {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+
+      > div {
+        flex: 0 0 150px;
+        min-width: 150px;
+      }
+    }
+  }
 }

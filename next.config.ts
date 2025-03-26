@@ -8,4 +8,7 @@ module.exports = {
                   @use "@/styles/abstracts/_colors.scss" as *;`,
   },
   i18n,
+  images: {
+    domains: ["image.tmdb.org"],
+  },
 };

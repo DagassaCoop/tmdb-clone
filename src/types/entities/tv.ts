@@ -1,4 +1,5 @@
 import { TMedia } from "./media";
+import { TMovie } from "./movies";
 
 export enum TVShowsList {
   POPULAR = "popular",
@@ -11,4 +12,8 @@ export type TTV = TMedia & {
   name: string;
   original_name: string;
   first_air_date: string;
+};
+
+export const isTV = (media: TMovie | TTV): media is TTV => {
+  return "name" in media;
 };

@@ -11,7 +11,7 @@ import Styles from "./styles/index.module.scss";
 import { TMediaListContent, TMediaListItem } from "./types";
 // Components
 import FloatingButton from "../FloatingButton/FloatingButton";
-
+import MediaCard from "../MediaCard/MediaCard";
 type Props = {
   className?: string;
   content: TMediaListContent;
@@ -26,11 +26,9 @@ const MediaList: FC<Props> = ({ content, className: classes }) => {
 
   if (error) return <div>Failed to load</div>;
 
-  console.log("data", data);
-
   return (
-    <div className={cx([Styles["media-list"], classes])}>
-      <div className={cx([Styles.header], "container")}>
+    <div className={cx([Styles["media-list"], classes, "container"])}>
+      <div className={cx([Styles.header])}>
         <div className={Styles.title}>{content.title}</div>
         <div>
           <FloatingButton
@@ -41,8 +39,11 @@ const MediaList: FC<Props> = ({ content, className: classes }) => {
         </div>
       </div>
       <div className={Styles.content}>
-        {/* <div className={Styles.cards}>{mediaList.title}</div> */}
-        {data?.map((item) => item.original_title)}
+        <div className={Styles.wrapper}>
+          {data?.map((item) => (
+            <MediaCard key={item.id} media={item} />
+          ))}
+        </div>
       </div>
     </div>
   );
