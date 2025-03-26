@@ -1,7 +1,4 @@
-import { TMovie } from "./movies";
-
-export * from "./movies";
-export * from "./tv";
+export * from "./entities/movies";
+export * from "./entities/tv";
 export * from "./api";
-
-export type TMedia = TMovie;
+export * from "./entities/media";
