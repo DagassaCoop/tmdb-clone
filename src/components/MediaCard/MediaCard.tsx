@@ -86,7 +86,6 @@ const MediaCard: FC<Props> = ({ media }) => {
             priority={true}
           />
         </Link>
-        <div className={Styles["more-icon-container"]}></div>
       </div>
 
       <div className={Styles["text-container"]}>
