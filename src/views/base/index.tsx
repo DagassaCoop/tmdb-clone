@@ -6,11 +6,10 @@ import cx from "classnames";
 import Header from "@/components/Header/Header";
 
 // Fonts
-import { Source_Code_Pro } from "next/font/google";
+import { Source_Sans_3 } from "next/font/google";
 
-const source_code_pro = Source_Code_Pro({
+const source_sans_3 = Source_Sans_3({
   subsets: ["latin"],
-  fallback: ["arial"],
   weight: ["400", "600", "700"],
 });
 
@@ -20,7 +19,7 @@ type Props = {
 
 const Base: FC<Props> = ({ children, className }) => {
   return (
-    <div className={cx(source_code_pro.className, className)}>
+    <div className={cx(source_sans_3.className, className)}>
       <Header />
       <main>{children}</main>
     </div>
