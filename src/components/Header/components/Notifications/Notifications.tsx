@@ -1,13 +1,15 @@
 // Core
 import React, { useRef, useState } from "react";
-import Image from "next/image";
 import cx from "classnames";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
+
 // Styles
 import Styles from "./styles/index.module.scss";
 // Hooks
 import { useOutsideClickCallback } from "@/hooks/useOutsideClickCallback";
+// Assets
+import NotificationsIcon from "@mui/icons-material/Notifications";
 
 const Notifications = () => {
   const { t } = useTranslation();
@@ -22,10 +24,7 @@ const Notifications = () => {
 
   return (
     <div className={Styles.notifications}>
-      <Image
-        unoptimized
-        src={"./notifications-icon.svg"}
-        alt="Notifications"
+      <NotificationsIcon
         width={24}
         height={24}
         className={Styles.icon}
