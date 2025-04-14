@@ -7,17 +7,18 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Base from "@/views/base";
 import Discover from "@/components/Discover";
 // Types
-import { TMovie, MoviesList } from "@/types/entities/movies";
+import { TMovie, TTV, MoviesList } from "@/types/";
 // API
-import { api } from "@/api/tmdb/tmdb";
+import { api } from "@/api";
+// Mock
+import { filterPresets } from "@/api/tmdb/mock/discover";
 
 interface MoviesProps {
-  movies: string;
+  movies: TMovie[] | TTV[];
 }
 
 const Movies: FC<MoviesProps> = ({ movies }) => {
   console.log(movies);
-
   return (
     <Base>
       <Discover />
@@ -31,10 +32,14 @@ export const getServerSideProps: GetServerSideProps = async ({
   locale,
   params,
 }) => {
-  let movies: TMovie[] = [];
+  let movies: TMovie[] | TTV[] = [];
   const listType = params?.type;
 
-  if (listType) movies = await api.movie.getList(listType as MoviesList);
+  if (listType && typeof listType === "string")
+    movies = await api.tmdb.discover.getList(
+      "movie",
+      filterPresets.movie[listType.replace("-", "_") as MoviesList]
+    );
 
   return {
     props: {

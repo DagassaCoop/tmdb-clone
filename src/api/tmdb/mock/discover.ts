@@ -1,7 +1,27 @@
 // Types
 import { MoviesList } from "@/types";
 
-export const filterPresets = {
+export interface FilterParams {
+  include_adult: boolean;
+  include_video: boolean;
+  language: string;
+  page: number;
+  sort_by: string;
+  with_release_type?: string;
+  release_date_gte?: string;
+  release_date_lte?: string;
+  without_genres?: string;
+  vote_count_gte?: number;
+}
+
+type FilterPreset = {
+  [key: string]: FilterParams[];
+};
+
+export const filterPresets: {
+  movie: FilterPreset;
+  tv: FilterPreset;
+} = {
   movie: {
     [MoviesList.POPULAR]: [
       {

@@ -5,6 +5,8 @@ import axios from "axios";
 import { MoviesList, TMDBApiRespond, TMovie, TTV, TVShowsList } from "@/types";
 // Config
 import { root } from "../config";
+import { FilterParams } from "./mock/discover";
+import { getFiltersIntoQuery } from "@/helpers/getFiltersIntoQuery";
 
 export const api = Object.freeze({
   movie: {
@@ -75,6 +77,26 @@ export const api = Object.freeze({
             },
           }
         );
+
+      return data.results;
+    },
+  },
+  discover: {
+    getList: async (
+      mediaType: "movie" | "tv",
+      filters: FilterParams[]
+    ): Promise<TMovie[] | TTV[]> => {
+      const query = getFiltersIntoQuery(filters);
+
+      const { data } = await axios.get(
+        `${root}/3/discover/${mediaType}?${query}`,
+        {
+          headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
+          },
+        }
+      );
 
       return data.results;
     },
