@@ -41,7 +41,7 @@ const MediaList: FC<Props> = ({ content, className: classes }) => {
       <div className={Styles.content}>
         <div className={Styles.wrapper}>
           {data?.map((item) => (
-            <MediaCard key={item.id} media={item} />
+            <MediaCard key={`${mediaList.id}-${item.id}`} media={item} />
           ))}
         </div>
       </div>
