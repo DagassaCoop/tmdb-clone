@@ -5,7 +5,6 @@ import { TMediaListContent, MediaListContents } from "../types";
 import {
   trendingMediaListItems,
   popularMediaListItems,
-  freeMediaListItems,
 } from "./mediaListItems";
 
 export const mediaListContents: {
@@ -22,11 +21,5 @@ export const mediaListContents: {
     key: MediaListContents.POPULAR,
     title: "What's Popular",
     lists: popularMediaListItems,
-  },
-  [MediaListContents.FREE]: {
-    id: "46cad094-24da-4a52-adb6-619bb1f8a3f6",
-    key: MediaListContents.FREE,
-    title: "Free To Watch",
-    lists: freeMediaListItems,
   },
 };

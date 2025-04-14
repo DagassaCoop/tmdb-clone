@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 30px 0;
+  padding: 30px 0 0 0;
 
   .header {
     width: 100%;
@@ -30,6 +30,8 @@
       display: flex;
       gap: 20px;
       padding: 0px 40px 30px 40px;
+      height: 325px;
+      min-width: 325px;
 
       > div {
         flex: 0 0 150px;

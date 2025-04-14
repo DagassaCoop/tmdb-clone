@@ -3,7 +3,6 @@ import { TMovie, TTV } from "@/types";
 export enum MediaListContents {
   TRENDING = "trending",
   POPULAR = "popular",
-  FREE = "free_to_watch",
 }
 
 export type TMediaListContent = {

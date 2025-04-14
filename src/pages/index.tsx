@@ -12,10 +12,16 @@ import { MediaListContents } from "@/components/MediaList/types";
 import Base from "@/views/base";
 import MediaList from "@/components/MediaList/MediaList";
 
+// Styles
+import Styles from "./index.module.scss";
+
 const Home = () => {
   return (
     <Base>
-      <MediaList content={mediaListContents[MediaListContents.TRENDING]} />
+      <div className={Styles["home-page"]}>
+        <MediaList content={mediaListContents[MediaListContents.TRENDING]} />
+        <MediaList content={mediaListContents[MediaListContents.POPULAR]} />
+      </div>
     </Base>
   );
 };
