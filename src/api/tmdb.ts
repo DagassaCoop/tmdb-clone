@@ -7,7 +7,7 @@ import { MoviesList, TMDBApiRespond, TMovie, TTV } from "@/types";
 import { root } from "./config";
 
 export const api = Object.freeze({
-  movies: {
+  movie: {
     getList: async (listType: MoviesList): Promise<TMovie[]> => {
       const { data }: { data: TMDBApiRespond<TMovie> } = await axios.get(
         `${root}/3/movie/${listType}?language=en-US&page=1`,

@@ -22,7 +22,7 @@ export const popularMediaListItems: TMediaListItem[] = [
   {
     id: "b9a05662-f42e-403e-9a9c-6596fdf0e6bc",
     title: "Streaming",
-    callback: async () => await api.movies.getPopular(),
+    callback: async () => await api.movie.getPopular(),
   },
   {
     id: "53a183eb-cf95-4bac-b88b-d2efdf364b76",
