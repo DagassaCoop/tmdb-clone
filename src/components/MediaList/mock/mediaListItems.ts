@@ -2,7 +2,8 @@
 import { TMediaListItem } from "../types";
 
 // API
-import { api } from "@/api";
+// import { api } from "@/api/tmdb";
+import { api } from "@/api/tmdb";
 
 export const trendingMediaListItems: TMediaListItem[] = [
   {
