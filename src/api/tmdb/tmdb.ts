@@ -2,15 +2,15 @@
 import axios from "axios";
 
 // Types
-import { MoviesList, TMDBApiRespond, TMovie, TTV } from "@/types";
+import { MoviesList, TMDBApiRespond, TMovie, TTV, TVShowsList } from "@/types";
 // Config
-import { root } from "./config";
+import { root } from "../config";
 
 export const api = Object.freeze({
   movie: {
     getList: async (listType: MoviesList): Promise<TMovie[]> => {
       const { data }: { data: TMDBApiRespond<TMovie> } = await axios.get(
-        `${root}/3/movie/${listType}?language=en-US&page=1`,
+        `${root}/3/movie/${listType.replace("-", "_")}?language=en-US&page=1`,
         {
           headers: {
             accept: "application/json",
@@ -36,6 +36,19 @@ export const api = Object.freeze({
     },
   },
   tv: {
+    getList: async (listType: TVShowsList): Promise<TTV[]> => {
+      const { data }: { data: TMDBApiRespond<TTV> } = await axios.get(
+        `${root}/3/tv/${listType.replace("-", "_")}?language=en-US&page=1`,
+        {
+          headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
+          },
+        }
+      );
+
+      return data.results;
+    },
     getPopular: async (): Promise<TTV[]> => {
       const { data }: { data: TMDBApiRespond<TTV> } = await axios.get(
         `${root}/3/tv/popular?language=en-US&page=1`,
