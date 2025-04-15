@@ -10,18 +10,15 @@ import Discover from "@/components/Discover";
 import { TMovie, TTV, MoviesList } from "@/types/";
 // API
 import { api } from "@/api";
-// Mock
-import { filterPresets } from "@/api/tmdb/mock/discover";
 
 interface MoviesProps {
-  movies: TMovie[] | TTV[];
+  initialMovies: TMovie[] | TTV[];
 }
 
-const Movies: FC<MoviesProps> = ({ movies }) => {
-  console.log(movies);
+const Movies: FC<MoviesProps> = ({ initialMovies }) => {
   return (
     <Base>
-      <Discover />
+      <Discover initialMediaList={initialMovies} />
     </Base>
   );
 };
@@ -32,19 +29,20 @@ export const getServerSideProps: GetServerSideProps = async ({
   locale,
   params,
 }) => {
-  let movies: TMovie[] | TTV[] = [];
+  let initialMovies: TMovie[] | TTV[] = [];
   const listType = params?.type;
 
   if (listType && typeof listType === "string")
-    movies = await api.tmdb.discover.getList(
-      "movie",
-      filterPresets.movie[listType.replace("-", "_") as MoviesList]
+    initialMovies = await api.tmdb.movie.getList(
+      listType.replace("-", "_") as MoviesList
     );
+
+  console.log("initialMovies", initialMovies[0]);
 
   return {
     props: {
       ...(await serverSideTranslations(locale ?? "en", ["common"])),
-      movies,
+      initialMovies,
     },
   };
 };

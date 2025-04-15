@@ -1,2 +1,14 @@
 .discover {
+  display: flex;
+
+  .filters {
+    width: 35%;
+  }
+
+  .list {
+    width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }

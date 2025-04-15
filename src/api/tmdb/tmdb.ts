@@ -87,6 +87,7 @@ export const api = Object.freeze({
       filters: FilterParams[]
     ): Promise<TMovie[] | TTV[]> => {
       const query = getFiltersIntoQuery(filters);
+      console.log(query);
 
       const { data } = await axios.get(
         `${root}/3/discover/${mediaType}?${query}`,
