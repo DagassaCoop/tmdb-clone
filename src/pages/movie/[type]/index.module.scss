@@ -1,0 +1,12 @@
+.movies-type-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+}

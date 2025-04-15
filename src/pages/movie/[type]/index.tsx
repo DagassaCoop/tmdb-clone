@@ -10,15 +10,21 @@ import Discover from "@/components/Discover";
 import { TMovie, TTV, MoviesList } from "@/types/";
 // API
 import { api } from "@/api";
+// Styles
+import Styles from "./index.module.scss";
 
 interface MoviesProps {
   initialMovies: TMovie[] | TTV[];
+  listType: string;
 }
 
-const Movies: FC<MoviesProps> = ({ initialMovies }) => {
+const Movies: FC<MoviesProps> = ({ initialMovies, listType }) => {
   return (
     <Base>
-      <Discover initialMediaList={initialMovies} />
+      <div className={Styles["movies-type-page"]}>
+        <div className={Styles.title}>{listType} Movies</div>
+        <Discover initialMediaList={initialMovies} />
+      </div>
     </Base>
   );
 };
@@ -37,12 +43,11 @@ export const getServerSideProps: GetServerSideProps = async ({
       listType.replace("-", "_") as MoviesList
     );
 
-  console.log("initialMovies", initialMovies[0]);
-
   return {
     props: {
       ...(await serverSideTranslations(locale ?? "en", ["common"])),
       initialMovies,
+      listType,
     },
   };
 };

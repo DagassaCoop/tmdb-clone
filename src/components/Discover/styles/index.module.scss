@@ -1,14 +1,17 @@
 .discover {
+  width: 100%;
   display: flex;
+  gap: 2rem;
+  padding: 2rem;
 
   .filters {
-    width: 35%;
+    width: 25%;
   }
 
   .list {
-    width: 65%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
   }
 }

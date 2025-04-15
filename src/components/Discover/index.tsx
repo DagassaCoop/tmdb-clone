@@ -1,3 +1,5 @@
+"use client";
+
 // Core
 import { FC, useState, useEffect, memo } from "react";
 
@@ -5,6 +7,7 @@ import { FC, useState, useEffect, memo } from "react";
 import Styles from "./styles/index.module.scss";
 // Types
 import { TMovie, TTV } from "@/types/";
+// Components
 import MediaCard from "../MediaCard/MediaCard";
 
 interface Props {
@@ -17,7 +20,6 @@ const Discover: FC<Props> = ({ initialMediaList }) => {
   );
 
   useEffect(() => {
-    console.log(initialMediaList[0]);
     setMediaList(initialMediaList);
   }, [initialMediaList]);
 

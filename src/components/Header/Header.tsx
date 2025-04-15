@@ -1,8 +1,11 @@
+"use client";
+
 // Core
 import React from "react";
 import cx from "classnames";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 // Styles
 import Styles from "./styles/index.module.scss";
@@ -19,9 +22,12 @@ import Settings from "./components/Settings/Settings";
 import Search from "./components/Search/Search";
 
 const Header = () => {
+  const router = useRouter();
   return (
     <header className={Styles.header}>
-      <div className={cx([Styles.content, "container"])}>
+      <div
+        className={cx([Styles.content, router.pathname === "/" && "container"])}
+      >
         <div className={Styles["nav-wrapper"]}>
           <Link href={book.root.url} className={Styles.logo}>
             <Image
