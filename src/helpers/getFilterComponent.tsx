@@ -1,6 +1,7 @@
 // Types
 import { TFilter, EFilterType } from "@/types/entities/filter";
 import { TForm } from "@/components/Filter/types/form";
+
 // Components
 import { FilterPicks } from "@/components/Filter/components/FilterPicks";
 

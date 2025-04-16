@@ -8,7 +8,7 @@ import { TFilter } from "@/types";
 // Helpers
 import { getFilterComponent } from "@/helpers/getFilterComponent";
 // Types
-import { TForm } from "../../types/form";
+import { TForm } from "@/components/Filter/types/form";
 
 interface Props {
   filter: TFilter;

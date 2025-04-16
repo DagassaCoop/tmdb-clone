@@ -3,7 +3,7 @@ import { FC } from "react";
 
 // Types
 import { EFilterName, TFilter } from "@/types";
-import { TForm } from "../../types/form";
+import { TForm } from "@/components/Filter/types/form";
 
 // Styles
 import Styles from "./styles/index.module.scss";

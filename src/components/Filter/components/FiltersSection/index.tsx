@@ -8,7 +8,7 @@ import { TFilter } from "@/types";
 // Components
 import { FilterBase } from "../FilterBase";
 // Types
-import { TForm } from "../../types/form";
+import { TForm } from "@/components/Filter/types/form";
 
 interface Props {
   label: string;
