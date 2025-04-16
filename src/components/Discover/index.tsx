@@ -9,6 +9,7 @@ import Styles from "./styles/index.module.scss";
 import { TMovie, TTV } from "@/types/";
 // Components
 import MediaCard from "../MediaCard/MediaCard";
+import Filter from "../Filter";
 
 interface Props {
   initialMediaList: TMovie[] | TTV[];
@@ -25,8 +26,10 @@ const Discover: FC<Props> = ({ initialMediaList }) => {
 
   return (
     <div className={Styles.discover}>
-      {/* Filters */}
-      <div className={Styles.filters}></div>
+      {/* Filter */}
+      <div className={Styles.filters}>
+        <Filter />
+      </div>
       {/* List */}
       <div className={Styles.list}>
         {mediaList.map((media) => {
