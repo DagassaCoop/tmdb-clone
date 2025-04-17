@@ -1,2 +1,47 @@
+@use "@/styles/abstracts/colors" as *;
+
 .filters-section {
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease forwards;
+
+  margin-bottom: 15px;
+  border-radius: 12px !important;
+
+  &::before {
+    display: none;
+  }
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 14px 16px 16px;
+    cursor: pointer;
+    bottom: 0;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+
+    .title {
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+
+    .icon {
+      font-weight: 900;
+      color: $text-primary;
+      transition: transform 0.2s ease;
+    }
+  }
+
+  :global(.MuiAccordionSummary-content) {
+    margin: 0;
+  }
+
+  :global(.MuiAccordionDetails-root) {
+    padding: 0;
+  }
 }

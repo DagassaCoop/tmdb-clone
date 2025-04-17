@@ -17,8 +17,8 @@ interface Props {
 
 export const FilterBase: FC<Props> = ({ filter, form }) => {
   return (
-    <div className={Styles.filter}>
-      <h4>{filter.label}</h4>
+    <div className={Styles[`filter-base`]}>
+      <h4 className={Styles.title}>{filter.label}</h4>
       {getFilterComponent(filter, form)}
     </div>
   );

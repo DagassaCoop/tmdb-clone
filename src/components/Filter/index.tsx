@@ -27,11 +27,13 @@ const Filter = () => {
         label="Sort"
         filters={sortPreset}
         form={{ register, errors }}
+        open={false}
       />
       <FiltersSection
         label="Filters"
         filters={moviePreset}
         form={{ register, errors }}
+        open={true}
       />
       <button type="submit" disabled={!isDirty}>
         Search

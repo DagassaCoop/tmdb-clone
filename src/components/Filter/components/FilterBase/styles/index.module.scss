@@ -1,2 +1,10 @@
 .filter-base {
+  border-top: 1px solid #eee;
+  padding: 14px 16px 16px;
+
+  .title {
+    font-size: 1em;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
 }

@@ -8,7 +8,7 @@ import "@/styles/index.scss";
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <AppCacheProvider {...pageProps}>
+    <AppCacheProvider {...pageProps} options={{ enableCssLayer: true }}>
       <Component {...pageProps} />
     </AppCacheProvider>
   );
