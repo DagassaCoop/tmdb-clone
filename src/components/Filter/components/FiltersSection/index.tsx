@@ -22,7 +22,19 @@ interface Props {
 
 export const FiltersSection: FC<Props> = ({ label, filters, form, open }) => {
   return (
-    <Accordion className={Styles[`filters-section`]} defaultExpanded={open}>
+    <Accordion
+      className={Styles[`filters-section`]}
+      defaultExpanded={open}
+      // sx={{
+      //   fontFamily: "var(--font-source-sans-3) !important",
+      //   "& .MuiAccordionSummary-root": {
+      //     fontFamily: "var(--font-source-sans-3) !important",
+      //   },
+      //   "& .MuiAccordionDetails-root": {
+      //     fontFamily: "var(--font-source-sans-3) !important",
+      //   },
+      // }}
+    >
       <AccordionSummary
         expandIcon={<NavigateNextIcon className={Styles.icon} />}
         className={Styles.header}

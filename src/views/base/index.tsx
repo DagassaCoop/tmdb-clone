@@ -11,6 +11,7 @@ import { Source_Sans_3 } from "next/font/google";
 const source_sans_3 = Source_Sans_3({
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],
+  variable: "--font-source-sans-3",
 });
 
 type Props = {
