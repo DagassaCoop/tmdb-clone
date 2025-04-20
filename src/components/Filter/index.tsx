@@ -35,7 +35,11 @@ const Filter = () => {
         form={{ register, errors }}
         open={true}
       />
-      <button type="submit" disabled={!isDirty}>
+      <button
+        type="submit"
+        disabled={!isDirty}
+        className={Styles["search-button"]}
+      >
         Search
       </button>
     </form>

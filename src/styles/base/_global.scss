@@ -3,6 +3,10 @@ main {
   justify-content: center;
 }
 
+button {
+  font-family: var(--font-source-sans-3);
+}
+
 .container {
   max-width: 1400px;
 }

@@ -10,7 +10,7 @@ import { Source_Sans_3 } from "next/font/google";
 
 const source_sans_3 = Source_Sans_3({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-source-sans-3",
 });
 
