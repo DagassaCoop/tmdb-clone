@@ -1,6 +1,7 @@
-import { FieldValues, FieldErrors, UseFormRegister } from "react-hook-form";
+import { FieldErrors, UseFormRegister } from "react-hook-form";
+import { FormValues } from "../index";
 
 export type TForm = {
-  register: UseFormRegister<FieldValues>;
-  errors: FieldErrors<FieldValues>;
+  register: UseFormRegister<FormValues>;
+  errors: FieldErrors<FormValues>;
 };

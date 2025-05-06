@@ -9,6 +9,10 @@
   justify-content: center;
   align-items: center;
 
+  &_padding {
+    padding: 0 2rem;
+  }
+
   .content {
     height: $header_content_height;
     width: 100%;

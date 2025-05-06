@@ -100,5 +100,5 @@ export type TFilter = {
   label: string;
   name: EFilterName; // Data
   type: EFilterType; // UI
-  initialValue?: any;
+  initialValue?: string | number | string[] | number[];
 };

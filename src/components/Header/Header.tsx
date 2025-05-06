@@ -23,8 +23,14 @@ import Search from "./components/Search/Search";
 
 const Header = () => {
   const router = useRouter();
+
   return (
-    <header className={Styles.header}>
+    <header
+      className={cx(
+        Styles.header,
+        router.pathname !== "/" && Styles["header_padding"]
+      )}
+    >
       <div
         className={cx([Styles.content, router.pathname === "/" && "container"])}
       >

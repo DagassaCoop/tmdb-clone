@@ -24,11 +24,15 @@ const Discover: FC<Props> = ({ initialMediaList }) => {
     setMediaList(initialMediaList);
   }, [initialMediaList]);
 
+  const onFilterChange = (query: string) => {
+    console.log(query);
+  };
+
   return (
     <div className={Styles.discover}>
       {/* Filter */}
       <div className={Styles.filters}>
-        <Filter />
+        <Filter callback={onFilterChange} />
       </div>
       {/* List */}
       <div className={Styles.list}>

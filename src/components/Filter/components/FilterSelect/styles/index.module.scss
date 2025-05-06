@@ -1,0 +1,48 @@
+.filter-select {
+  border: 0;
+
+  .title {
+  }
+
+  .options-wrapper {
+    font-family: var(--font-source-sans-3);
+    font-size: 0.9em;
+    background-color: #dfe2e6;
+
+    &:hover {
+      background-color: #bdc4cb;
+    }
+
+    .option {
+      color: white;
+      background-color: $light-blue !important;
+
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  :global {
+    .MuiPaper-root {
+      background-color: #1a1a1a;
+      color: white;
+    }
+
+    .MuiMenuItem-root {
+      &:hover {
+        color: white;
+        background-color: #007bff;
+      }
+
+      &.Mui-selected {
+        color: white;
+        background-color: #007bff;
+
+        &:hover {
+          background-color: #007bff;
+        }
+      }
+    }
+  }
+}

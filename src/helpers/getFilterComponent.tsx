@@ -4,11 +4,25 @@ import { TForm } from "@/components/Filter/types/form";
 
 // Components
 import { FilterPicks } from "@/components/Filter/components/FilterPicks";
+import { FilterSelect } from "@/components/Filter/components/FilterSelect";
+
+// Helpers
+import { getFilterOptions } from "@/helpers/getFilterOptions";
 
 export const getFilterComponent = (filter: TFilter, form: TForm) => {
   switch (filter.type) {
     case EFilterType.select:
-      return <>Select</>;
+      return (
+        <>
+          <FilterSelect
+            filter={{
+              ...filter,
+              options: getFilterOptions(filter.name),
+            }}
+            form={form}
+          />
+        </>
+      );
     case EFilterType["range-single"]:
       return <>Range Single</>;
     case EFilterType["range-double"]:
