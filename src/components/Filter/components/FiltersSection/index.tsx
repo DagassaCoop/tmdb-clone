@@ -5,10 +5,9 @@ import { FC } from "react";
 import Styles from "./styles/index.module.scss";
 // Types
 import { TFilter } from "@/types";
+import { TForm } from "@/components/Filter/types/form";
 // Components
 import { FilterBase } from "../FilterBase";
-// Types
-import { TForm } from "@/components/Filter/types/form";
 // MUI
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";

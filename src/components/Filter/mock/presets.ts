@@ -66,4 +66,6 @@ export const moviePreset: TFilter[] = [
   },
 ];
 
+export const combinedPreset: TFilter[] = [...sortPreset, ...moviePreset];
+
 export const tvPreset: TFilter[] = [];

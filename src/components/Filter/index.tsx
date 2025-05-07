@@ -10,46 +10,25 @@ import { FiltersSection } from "./components/FiltersSection";
 import Styles from "./styles/index.module.scss";
 // Mock
 import { moviePreset, sortPreset } from "./mock/presets";
-import { TFilter, EFilterName } from "@/types";
+import { TFilter } from "@/types";
+import { IFormValues } from "./types/form";
 
 interface Props {
-  callback: (query: string) => void;
+  callback: (filters: IFormValues) => void;
 }
 
-export interface FormValues {
-  [key: string]: string | string[] | number | number[] | undefined;
-}
-
-const getInitialValues = (presets: TFilter[]) => {
-  return presets.reduce((acc: FormValues, preset) => {
+// Helper to parse presets into initial values
+const getInitialValuesFromPreset = (presets: TFilter[]) => {
+  return presets.reduce((acc: IFormValues, preset) => {
     acc[preset.name] = preset.initialValue;
     return acc;
   }, {});
 };
 
-// Не работает
-// const getQueryString = (data: FormValues) => {
-//   return Object.entries(data)
-//     .filter(([key, value]) => {
-//       console.log(key, value, key != EFilterName.sort, EFilterName.sort);
-//       if (
-//         key !== EFilterName.sort &&
-//         value === moviePreset.find((p) => p.name == key)?.initialValue
-//       )
-//         return false;
-//       return true;
-//     })
-//     .map(([key, value]) => {
-//       console.log(key, value);
-//       return `${EFilterName[key as keyof typeof EFilterName]}=${value}`;
-//     })
-//     .join("&");
-// };
-
 const Filter: FC<Props> = ({ callback }) => {
-  const [currentValues, setCurrentValues] = useState<FormValues>({
-    ...getInitialValues(sortPreset),
-    ...getInitialValues(moviePreset),
+  const [currentValues, setCurrentValues] = useState<IFormValues>({
+    ...getInitialValuesFromPreset(sortPreset),
+    ...getInitialValuesFromPreset(moviePreset),
   });
 
   const {
@@ -57,15 +36,14 @@ const Filter: FC<Props> = ({ callback }) => {
     handleSubmit,
     formState: { errors, isDirty },
     reset,
-  } = useForm<FormValues>({
+  } = useForm<IFormValues>({
     defaultValues: currentValues,
   });
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
+  const onSubmit = (data: IFormValues) => {
     setCurrentValues(data);
     reset(data);
-    // callback(getQueryString(data));
+    callback(data);
   };
 
   return (

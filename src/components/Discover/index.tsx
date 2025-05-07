@@ -1,38 +1,48 @@
 "use client";
 
 // Core
-import { FC, useState, useEffect, memo } from "react";
+import { FC, useState, memo } from "react";
+import useSWR from "swr";
 
 // Styles
 import Styles from "./styles/index.module.scss";
 // Types
 import { TMovie, TTV } from "@/types/";
+import { IFormValues } from "@/components/Filter/types/form";
 // Components
 import MediaCard from "../MediaCard/MediaCard";
 import Filter from "../Filter";
+// API
+import { api } from "@/api";
 
 interface Props {
   initialMediaList: TMovie[] | TTV[];
 }
 
 const Discover: FC<Props> = ({ initialMediaList }) => {
-  const [mediaList, setMediaList] = useState<TMovie[] | TTV[]>(
-    initialMediaList
+  const [filters, setFilters] = useState<IFormValues>({});
+
+  const {
+    data: mediaList,
+    // error,
+    // isLoading,
+  } = useSWR(
+    ["/api/discover", filters],
+    () => api.tmdb.discover.getList("movie", filters),
+    {
+      fallbackData: initialMediaList,
+    }
   );
 
-  useEffect(() => {
-    setMediaList(initialMediaList);
-  }, [initialMediaList]);
-
-  const onFilterChange = (query: string) => {
-    console.log(query);
+  const onFilterUpdate = (filters: IFormValues) => {
+    setFilters(filters);
   };
 
   return (
     <div className={Styles.discover}>
       {/* Filter */}
       <div className={Styles.filters}>
-        <Filter callback={onFilterChange} />
+        <Filter callback={onFilterUpdate} />
       </div>
       {/* List */}
       <div className={Styles.list}>

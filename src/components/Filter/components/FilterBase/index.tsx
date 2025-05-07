@@ -5,11 +5,9 @@ import { FC } from "react";
 import Styles from "./styles/index.module.scss";
 // Types
 import { TFilter } from "@/types";
+import { TForm } from "@/components/Filter/types/form";
 // Helpers
 import { getFilterComponent } from "@/helpers/getFilterComponent";
-// Types
-import { TForm } from "@/components/Filter/types/form";
-
 interface Props {
   filter: TFilter;
   form: TForm;

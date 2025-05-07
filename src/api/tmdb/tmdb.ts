@@ -3,9 +3,12 @@ import axios from "axios";
 
 // Types
 import { MoviesList, TMDBApiRespond, TMovie, TTV, TVShowsList } from "@/types";
+import { IFormValues } from "@/components/Filter/types/form";
+
 // Config
 import { root } from "../config";
-import { FilterParams } from "./mock/discover";
+
+// Helpers
 import { getFiltersIntoQuery } from "@/helpers/getFiltersIntoQuery";
 
 export const api = Object.freeze({
@@ -84,10 +87,9 @@ export const api = Object.freeze({
   discover: {
     getList: async (
       mediaType: "movie" | "tv",
-      filters: FilterParams[]
+      filters: IFormValues
     ): Promise<TMovie[] | TTV[]> => {
       const query = getFiltersIntoQuery(filters);
-      console.log(query);
 
       const { data } = await axios.get(
         `${root}/3/discover/${mediaType}?${query}`,
