@@ -37,6 +37,8 @@ export const getFiltersIntoQuery = (filters: IFormValues): string => {
           return `sort_by=${value}`;
         case EFilterName.language:
           return `language=${value}`;
+        case EFilterName["min-vote"]:
+          return `vote_count.gte=${value}`;
         default:
           return `${EFilterName[key as keyof typeof EFilterName]}=${value}`;
       }

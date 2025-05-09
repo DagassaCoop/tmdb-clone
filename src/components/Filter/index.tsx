@@ -33,6 +33,7 @@ const Filter: FC<Props> = ({ callback }) => {
 
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors, isDirty },
     reset,
@@ -51,13 +52,13 @@ const Filter: FC<Props> = ({ callback }) => {
       <FiltersSection
         label="Sort"
         filters={sortPreset}
-        form={{ register, errors }}
+        form={{ register, errors, control }}
         open={false}
       />
       <FiltersSection
         label="Filters"
         filters={moviePreset}
-        form={{ register, errors }}
+        form={{ register, errors, control }}
         open={true}
       />
       <button

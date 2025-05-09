@@ -18,3 +18,12 @@ export const languageOptions: TOption[] = [
     value: "en",
   },
 ];
+
+export const minUserVotesOptions: TOption[] = [
+  { value: 0, label: "0" },
+  { value: 100, label: "100" },
+  { value: 200, label: "200" },
+  { value: 300, label: "300" },
+  { value: 400, label: "400" },
+  { value: 500, label: "500" },
+];

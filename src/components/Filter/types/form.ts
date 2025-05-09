@@ -1,7 +1,8 @@
-import { FieldErrors, UseFormRegister } from "react-hook-form";
+import { Control, FieldErrors, UseFormRegister } from "react-hook-form";
 
 export type TForm = {
   register: UseFormRegister<IFormValues>;
+  control: Control<IFormValues>;
   errors: FieldErrors<IFormValues>;
 };
 

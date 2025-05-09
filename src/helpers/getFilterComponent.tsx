@@ -8,6 +8,7 @@ import { FilterSelect } from "@/components/Filter/components/FilterSelect";
 
 // Helpers
 import { getFilterOptions } from "@/helpers/getFilterOptions";
+import { FilterRangeSingle } from "@/components/Filter/components/FilterRangeSingle";
 
 export const getFilterComponent = (filter: TFilter, form: TForm) => {
   switch (filter.type) {
@@ -24,7 +25,12 @@ export const getFilterComponent = (filter: TFilter, form: TForm) => {
         </>
       );
     case EFilterType["range-single"]:
-      return <>Range Single</>;
+      return (
+        <FilterRangeSingle
+          filter={{ ...filter, options: getFilterOptions(filter.name) }}
+          form={form}
+        />
+      );
     case EFilterType["range-double"]:
       return <>Range Double</>;
     case EFilterType.checkbox:
