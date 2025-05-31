@@ -5,6 +5,7 @@ import { TForm } from "@/components/Filter/types/form";
 // Components
 import { FilterPicks } from "@/components/Filter/components/FilterPicks";
 import { FilterSelect } from "@/components/Filter/components/FilterSelect";
+import { FilterRangeDouble } from "@/components/Filter/components/FilterRangeDouble";
 
 // Helpers
 import { getFilterOptions } from "@/helpers/getFilterOptions";
@@ -32,7 +33,12 @@ export const getFilterComponent = (filter: TFilter, form: TForm) => {
         />
       );
     case EFilterType["range-double"]:
-      return <>Range Double</>;
+      return (
+        <FilterRangeDouble
+          filter={{ ...filter, options: getFilterOptions(filter.name) }}
+          form={form}
+        />
+      );
     case EFilterType.checkbox:
       return <>Checkbox</>;
     case EFilterType.text:
