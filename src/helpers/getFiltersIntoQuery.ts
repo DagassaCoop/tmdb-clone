@@ -39,6 +39,14 @@ export const getFiltersIntoQuery = (filters: IFormValues): string => {
           return `language=${value}`;
         case EFilterName["min-vote"]:
           return `vote_count.gte=${value}`;
+        case EFilterName["user-score"]:
+          return `vote_average.gte=${
+            (value as Array<number>)[0]
+          }&vote_average.lte=${(value as Array<number>)[1]}`;
+        case EFilterName.runtime:
+          return `with_runtime.gte=${
+            (value as Array<number>)[0]
+          }&with_runtime.lte=${(value as Array<number>)[1]}`;
         default:
           return `${EFilterName[key as keyof typeof EFilterName]}=${value}`;
       }

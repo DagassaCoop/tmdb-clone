@@ -41,7 +41,7 @@ export const moviePreset: TFilter[] = [
     label: "User Score",
     name: EFilterName["user-score"],
     type: EFilterType["range-double"],
-    initialValue: [0, 100],
+    initialValue: [0, 10],
   },
   {
     id: "9b1fbcd2-2bcb-42e4-9426-6cfe4d35343c",
@@ -55,7 +55,7 @@ export const moviePreset: TFilter[] = [
     label: "Runtime",
     name: EFilterName["runtime"],
     type: EFilterType["range-double"],
-    initialValue: [0, 100],
+    initialValue: [0, 400],
   },
   {
     id: "5e9db5e6-70ec-464a-bc1f-d69007dda4b2",

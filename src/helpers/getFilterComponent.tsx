@@ -10,6 +10,7 @@ import { FilterRangeDouble } from "@/components/Filter/components/FilterRangeDou
 // Helpers
 import { getFilterOptions } from "@/helpers/getFilterOptions";
 import { FilterRangeSingle } from "@/components/Filter/components/FilterRangeSingle";
+import { getFilterSteps } from "./getFilterSteps";
 
 export const getFilterComponent = (filter: TFilter, form: TForm) => {
   switch (filter.type) {
@@ -30,6 +31,7 @@ export const getFilterComponent = (filter: TFilter, form: TForm) => {
         <FilterRangeSingle
           filter={{ ...filter, options: getFilterOptions(filter.name) }}
           form={form}
+          step={getFilterSteps(filter.name)}
         />
       );
     case EFilterType["range-double"]:
@@ -37,6 +39,7 @@ export const getFilterComponent = (filter: TFilter, form: TForm) => {
         <FilterRangeDouble
           filter={{ ...filter, options: getFilterOptions(filter.name) }}
           form={form}
+          step={getFilterSteps(filter.name)}
         />
       );
     case EFilterType.checkbox:

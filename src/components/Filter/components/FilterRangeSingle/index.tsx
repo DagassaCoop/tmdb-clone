@@ -14,9 +14,10 @@ import { TOption } from "../../types/option";
 interface Props {
   filter: TFilter & { options: TOption[] };
   form: TForm;
+  step: number;
 }
 
-export const FilterRangeSingle: FC<Props> = ({ filter, form }) => {
+export const FilterRangeSingle: FC<Props> = ({ filter, form, step }) => {
   const { control } = form;
 
   return (
@@ -29,13 +30,13 @@ export const FilterRangeSingle: FC<Props> = ({ filter, form }) => {
           <Slider
             {...field}
             value={Number(field.value)}
-            step={50}
+            step={step}
             marks={filter.options.map((option) => ({
               value: Number(option.value),
               label: option.label,
             }))}
             min={0}
-            max={500}
+            max={Number(filter.options.at(-1)?.value) || 500}
             valueLabelDisplay="auto"
           />
         )}
