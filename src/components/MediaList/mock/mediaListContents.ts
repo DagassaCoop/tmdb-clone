@@ -13,7 +13,7 @@ export const mediaListContents: {
   [MediaListContents.TRENDING]: {
     id: "1a4f23e2-1a3a-4986-a292-fc35cdf101eb",
     key: MediaListContents.TRENDING,
-    title: "Tending",
+    title: "Trending",
     lists: trendingMediaListItems,
   },
   [MediaListContents.POPULAR]: {
