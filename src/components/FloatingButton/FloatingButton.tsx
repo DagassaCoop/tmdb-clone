@@ -1,6 +1,6 @@
 "use client";
 // Core
-import { FC, memo } from "react";
+import { FC, memo, useCallback } from "react";
 
 // Styles
 import Styles from "./styles/index.module.scss";
@@ -23,9 +23,12 @@ function a11yProps(index: number) {
 }
 
 const FloatingButton: FC<Props> = ({ value, tags, callback }) => {
-  const handleChange = (event: unknown, newValue: number) => {
-    callback?.(newValue);
-  };
+  const handleChange = useCallback(
+    (event: unknown, newValue: number) => {
+      callback?.(newValue);
+    },
+    [callback]
+  );
 
   return (
     <Tabs
