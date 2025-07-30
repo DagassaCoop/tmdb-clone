@@ -10,7 +10,7 @@ import Styles from "./styles/index.module.scss";
 import { TMovie, TTV } from "@/types/";
 // Components
 import MediaCard from "../MediaCard/MediaCard";
-import Filter from "../Filter";
+import Filter from "../Filter/Filter";
 // API
 import { api } from "@/api";
 // Store

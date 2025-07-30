@@ -7,7 +7,7 @@ import Styles from "./styles/index.module.scss";
 import { TFilter } from "@/types";
 import { TForm } from "@/components/Filter/types/form";
 // Helpers
-import { useFilterComponent } from "@/helpers/getFilterComponent";
+import { useFilterComponent } from "@/hooks/getFilterComponent";
 interface Props {
   filter: TFilter;
   form: TForm;

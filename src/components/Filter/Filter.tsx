@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { FC, useEffect } from "react";
 
 // Components
-import { FiltersSection } from "./components/FiltersSection";
+import { FiltersSection } from "./components/FiltersSection/FiltersSection";
 // Styles
 import Styles from "./styles/index.module.scss";
 // Mock

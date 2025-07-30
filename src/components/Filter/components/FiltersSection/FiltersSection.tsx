@@ -7,7 +7,7 @@ import Styles from "./styles/index.module.scss";
 import { TFilter } from "@/types";
 import { TForm } from "@/components/Filter/types/form";
 // Components
-import { FilterBase } from "../FilterBase";
+import { FilterBase } from "../FilterBase/FilterBase";
 // MUI
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
