@@ -19,13 +19,16 @@ interface Props {
 
 export const FilterRangeSingle: FC<Props> = ({ filter, form, step }) => {
   const { control } = form;
+  // const currentValue = watch(filter.name.toString());
 
   return (
     <FormControl fullWidth className={Styles["filter-range-single"]}>
+      {/* <div style={{ fontSize: '10px', color: '#666', marginBottom: '4px' }}>
+        Current value: {JSON.stringify(currentValue)}
+      </div> */}
       <Controller
         name={filter.name.toString()}
         control={control}
-        defaultValue={filter.initialValue as number}
         render={({ field }) => (
           <Slider
             {...field}

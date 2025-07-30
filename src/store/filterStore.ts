@@ -13,13 +13,14 @@ interface FilterState {
 
     isDirty: boolean
     hasAppliedFilters: boolean
+    isHydrated: boolean
 
     setFilters: (filters: IFormValues) => void
     updateFilter: (key: string, value: string | number | string[] | number[] | undefined) => void
     resetFilters: () => void
-    
-    // setDirty: (dirty: boolean) => void
-    // setAppliedFilters: (applied: boolean) => void
+    setDirty: (dirty: boolean) => void
+    setAppliedFilters: (applied: boolean) => void
+    setHydrated: (hydrated: boolean) => void
 }
 
 const getInitialValuesFromPreset = (presets: TFilter[]) => {
@@ -51,6 +52,7 @@ export const useFilterStore = create<FilterState>()(
             // Metadata
             isDirty: false,
             hasAppliedFilters: false,
+            isHydrated: false,
 
             // Actions
             setFilters: (filters) => {
@@ -76,14 +78,28 @@ export const useFilterStore = create<FilterState>()(
                     isDirty: false,
                     hasAppliedFilters: false
                 })
-            }
+            },
+            setDirty: (dirty) => {
+                set({ isDirty: dirty })
+            },
+            setAppliedFilters: (applied) => {
+                set({ hasAppliedFilters: applied })
+            },
+            setHydrated: (hydrated) => {
+                set({ isHydrated: hydrated })
+            },
         }),
         {
             name: "filter-store",
             partialize: (state) => ({
                 filters: state.filters,
                 hasAppliedFilters: state.hasAppliedFilters
-            })
+            }),
+            onRehydrateStorage: () => (state) => {
+                if (state) {
+                    state.setHydrated(true);
+                }
+            },
         }
     )
 )

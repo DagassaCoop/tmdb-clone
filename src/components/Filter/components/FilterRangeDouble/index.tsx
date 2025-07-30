@@ -18,14 +18,17 @@ interface Props {
 
 export const FilterRangeDouble: FC<Props> = ({ filter, form, step }) => {
   const { control } = form;
+  // const currentValue = watch(filter.name.toString());
 
   return (
     <div className={Styles["filter-range-double"]}>
+      {/* <div style={{ fontSize: '10px', color: '#666', marginBottom: '4px' }}>
+        Current value: {JSON.stringify(currentValue)}
+      </div> */}
       <FormControl fullWidth>
         <Controller
           name={filter.name.toString()}
           control={control}
-          defaultValue={filter.initialValue || [0, 100]}
           render={({ field }) => (
             <Slider
               {...field}

@@ -1,26 +1,27 @@
 "use client";
 
 // Core
-import { FC, useState, memo } from "react";
+import { FC, memo } from "react";
 import useSWR from "swr";
 
 // Styles
 import Styles from "./styles/index.module.scss";
 // Types
 import { TMovie, TTV } from "@/types/";
-import { IFormValues } from "@/components/Filter/types/form";
 // Components
 import MediaCard from "../MediaCard/MediaCard";
 import Filter from "../Filter";
 // API
 import { api } from "@/api";
+// Store
+import { useFilterStore } from "@/store/filterStore";
 
 interface Props {
   initialMediaList: TMovie[] | TTV[];
 }
 
 const Discover: FC<Props> = ({ initialMediaList }) => {
-  const [filters, setFilters] = useState<IFormValues>({});
+  const filters = useFilterStore((state) => state.filters)
 
   const {
     data: mediaList,
@@ -34,15 +35,11 @@ const Discover: FC<Props> = ({ initialMediaList }) => {
     }
   );
 
-  const onFilterUpdate = (filters: IFormValues) => {
-    setFilters(filters);
-  };
-
   return (
     <div className={Styles.discover}>
       {/* Filter */}
       <div className={Styles.filters}>
-        <Filter callback={onFilterUpdate} />
+        <Filter />
       </div>
       {/* List */}
       <div className={Styles.list}>

@@ -3,6 +3,7 @@
 // Core
 import { FC } from "react";
 import { Select, MenuItem, FormControl } from "@mui/material";
+import { Controller } from "react-hook-form";
 
 // Styles
 import Styles from "./styles/index.module.scss";
@@ -18,31 +19,39 @@ interface Props {
 }
 
 export const FilterSelect: FC<Props> = ({ filter, form }) => {
-  const { register, errors } = form;
+  const { control, errors } = form;
+  // console.log('select filter >> ', filter)
 
   return (
     <FormControl fullWidth className={Styles["filter-select"]}>
-      <Select
-        {...register(filter.name.toString())}
-        error={!!errors[filter.name]}
-        displayEmpty
-        defaultValue={filter.options[0].value}
-        className={Styles["options-wrapper"]}
-        sx={{
-          "& .MuiSelect-select": {
-            padding: "10px 12px",
-          },
-          "& .MuiOutlinedInput-notchedOutline": {
-            display: "none",
-          },
-        }}
-      >
-        {filter.options.map((option: TOption) => (
-          <MenuItem key={option.value} value={option.value}>
-            {option.label}
-          </MenuItem>
-        ))}
-      </Select>
+      {/* <div style={{ fontSize: '10px', color: '#666', marginBottom: '4px' }}>
+        Filter name: {filter.name}, Initial value: {JSON.stringify(filter.initialValue)}
+      </div> */}
+      <Controller
+        name={filter.name.toString()}
+        control={control}
+        render={({ field }) => (
+          <Select
+            {...field}
+            error={!!errors[filter.name]}
+            className={Styles["options-wrapper"]}
+            sx={{
+              "& .MuiSelect-select": {
+                padding: "10px 12px",
+              },
+              "& .MuiOutlinedInput-notchedOutline": {
+                display: "none",
+              },
+            }}
+          >
+            {filter.options.map((option: TOption) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </Select>
+        )}
+      />
     </FormControl>
   );
 };

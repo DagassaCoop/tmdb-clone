@@ -12,7 +12,7 @@ import { getFilterOptions } from "@/helpers/getFilterOptions";
 import { FilterRangeSingle } from "@/components/Filter/components/FilterRangeSingle";
 import { getFilterSteps } from "./getFilterSteps";
 
-export const getFilterComponent = (filter: TFilter, form: TForm) => {
+export const useFilterComponent = (filter: TFilter, form: TForm) => {
   switch (filter.type) {
     case EFilterType.select:
       return (
@@ -20,6 +20,7 @@ export const getFilterComponent = (filter: TFilter, form: TForm) => {
           <FilterSelect
             filter={{
               ...filter,
+              initialValue: filter.initialValue,
               options: getFilterOptions(filter.name),
             }}
             form={form}
